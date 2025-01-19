@@ -12,7 +12,11 @@ const userRouter = require('./routes/user')
 app.use(express.json()); //for parsing the JSON OBJECTS
 
 
-app.use(cors())
+app.use(cors({
+    origin: "http://localhost:5173", // Frontend origin
+    credentials: true, // Allow sending cookies
+}));
+
 app.use(cookieParser());
 //How you would be using that 
 
